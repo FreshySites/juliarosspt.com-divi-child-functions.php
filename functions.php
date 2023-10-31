@@ -78,108 +78,110 @@ add_filter( 'gform_stripe_customer_id', function ( $customer_id, $feed, $entry, 
 		return $customer_id;
 	}
 
-   if ($feed_name == 'Auth Registration - Special Education Coaching') {
-	$customer_params = array();
+  if ($feed_name == 'Auth Registration - Special Education Coaching') {
+	
 	   $customer_name_field_id_fn= rgar( $entry, '114.3');
 	   $customer_name_field_id_ln= rgar( $entry, '114.6');
+	   $customer_email_stripe=rgar( $entry, '130');
 	   
    } else if ( $feed_name === 'Auth test' ) {
     gf_stripe()->log_debug( __METHOD__ . '(): Condition 1 Passed ');
-	$customer_params = array();
+	
 	   $customer_name_field_id_fn=rgar( $entry, '86.3');
 	   $customer_name_field_id_ln=rgar( $entry, '86.6');
+	   $customer_email_stripe=rgar( $entry, '20');
 	   
    } else if ($feed_name == 'Auth Registration Academic Coaching') {
-	$customer_params = array();
+	
 	   $customer_name_field_id_fn=rgar( $entry, '75.3');
-	   $customer_name_field_id_ln=rgar( $entry, '75.6'); 
+	   $customer_name_field_id_ln=rgar( $entry, '75.6');
+	   $customer_email_stripe=rgar( $entry, '84'); 
 	   
    } else if ($feed_name == 'Auth Registration Academic Year Fall Tutoring') {
-	$customer_params = array();
+	
 	   $customer_name_field_id_fn=rgar( $entry, '72.3');
 	   $customer_name_field_id_ln=rgar( $entry, '72.6');
-	   
+	   $customer_email_stripe=rgar( $entry, '80');
    } 
    else if ($feed_name == 'Auth Registration - Academic Year Fall Tutoring NEW 2023') {
-	$customer_params = array();
+	
 	   $customer_name_field_id_fn=rgar( $entry, '72.3');
 	   $customer_name_field_id_ln=rgar( $entry, '72.6');
-	   
+	   $customer_email_stripe=rgar( $entry, '82');
    }
    else if ($feed_name == 'Auth Registration - Career Coaching') {
 	   $customer_name_field_id_fn=rgar( $entry, '114.3');
 	   $customer_name_field_id_ln=rgar( $entry, '114.6');
-	   
+	   $customer_email_stripe=rgar( $entry, '4');
    }
    else if ($feed_name == 'Auth Registration - College Coaching') {
 	   $customer_name_field_id_fn=rgar( $entry, '114.3');
 	   $customer_name_field_id_ln=rgar( $entry, '114.6');
-	   
+	   $customer_email_stripe=rgar( $entry, '137');
    }
    else if ($feed_name == 'Auth Test College Coaching') {
 	   $customer_name_field_id_fn=rgar( $entry, '114.3');
 	   $customer_name_field_id_ln=rgar( $entry, '114.6');
+	   $customer_email_stripe=rgar( $entry, '4');
 	   
    }
    else if ($feed_name == 'Auth Registration - College Student Support Services') {
 	   $customer_name_field_id_fn=rgar( $entry, '134.3');
 	   $customer_name_field_id_ln=rgar( $entry, '134.6');
-	   
+	   $customer_email_stripe=rgar( $entry, '140');
    }
    else if ($feed_name == 'Auth Registration - College Transfer Coaching' ) {
 	   $customer_name_field_id_fn=rgar( $entry, '132.3');
 	   $customer_name_field_id_ln=rgar( $entry, '132.6');
-	   
+	   $customer_email_stripe=rgar( $entry, '142');
    }
    else if ($feed_name == 'Auth Registration - Graduate School Coaching') {
 	   $customer_name_field_id_fn=rgar( $entry, '121.3');
 	   $customer_name_field_id_ln=rgar( $entry, '121.6');
-	   
+	   $customer_email_stripe=rgar( $entry, '131');
    }
    else if ($feed_name == 'Auth Registration - High School Coaching') {
 	   $customer_name_field_id_fn=rgar( $entry, '112.3');
 	   $customer_name_field_id_ln=rgar( $entry, '112.6');
-	   
+	   $customer_email_stripe=rgar( $entry, '130');
    }
    else if ($feed_name == 'Auth Registration - SAT / ACT First Class - 9 Month Preparation Course') {
 	   $customer_name_field_id_fn=rgar( $entry, '97.3');
 	   $customer_name_field_id_ln=rgar( $entry, '97.6');
-	   
+	   $customer_email_stripe=rgar( $entry, '104');
    }
    else if ($feed_name == 'Auth Registration - SAT / ACT The Express - 6 Month Preparation Course') {
 	   $customer_name_field_id_fn=rgar( $entry, '91.3');
 	   $customer_name_field_id_ln=rgar( $entry, '91.6');
-	   
+	   $customer_email_stripe=rgar( $entry, '102');
    }
    else if ($feed_name == 'Auth Registration - SAT/ACT Boot Camp Summer 2023') {
 	   $customer_name_field_id_fn=rgar( $entry, '91.3');
 	   $customer_name_field_id_ln=rgar( $entry, '91.6');
-	   
+	   $customer_email_stripe=rgar( $entry, '118');
    }
    else if ($feed_name == 'Auth Registration - SAT/ACT Preparation Program - Summer - Rising Seniors') {
 	   $customer_name_field_id_fn=rgar( $entry, '91.3');
 	   $customer_name_field_id_ln=rgar( $entry, '91.6');
-	   
+	   $customer_email_stripe=rgar( $entry, '103');
    }
    else if ($feed_name == 'Auth Registration - SAT/ACT Preparation Program - Summer/Fall - Rising Seniors') {
 	   $customer_name_field_id_fn=rgar( $entry, '91.3');
 	   $customer_name_field_id_ln=rgar( $entry, '91.6');
-	   
-   }
-   else if ($feed_name == 'Auth Registration - Special Education Coaching') {
-	   $customer_name_field_id_fn=rgar( $entry, '114.3');
-	   $customer_name_field_id_ln=rgar( $entry, '114.6');
+	   $customer_email_stripe=rgar( $entry, '101');
 	   
    }
    else if ($feed_name == 'Auth Registration - Summer Tutoring') {
+    
 	   $customer_name_field_id_fn=rgar( $entry, '72.3');
 	   $customer_name_field_id_ln=rgar( $entry, '72.6');
-	   
+	   $customer_email_stripe=rgar( $entry, '91');
    }
    else if ($feed_name == 'Auth Registration - ACT Jump Start 2023') {
+    
 	   $customer_name_field_id_fn=rgar( $entry, '91.3');
 	   $customer_name_field_id_ln=rgar( $entry, '91.6');
-	   
+	   $customer_email_stripe=rgar( $entry, '112');
    }
 	else {
 	   gf_stripe()->log_debug( __METHOD__ . '(): Name: Not  a valid feed');
@@ -210,8 +212,10 @@ add_filter( 'gform_stripe_customer_id', function ( $customer_id, $feed, $entry, 
    // Optional - Customer name using a Name field id 8.
   $customer_params['name'] = $customer_name_field_id_ln . ', ' . $customer_name_field_id_fn;
   gf_stripe()->log_debug( __METHOD__ . '(): Condition Passed'. $customer_name_field_id_fn);
-  /* $customer_params['name'] = rgar( $entry, '86.3' ) . ' ' . rgar( $entry, '86.6' );*/
-   gf_stripe()->log_debug( __METHOD__ . '(): Name: ' . $customer_params['name'] );
+
+ gf_stripe()->log_debug( __METHOD__ . '(): Name: ' . $customer_params['name'] );
+ $customer_params['email'] = $customer_email_stripe;
+        gf_stripe()->log_debug( __METHOD__ . '(): Email: ' . $customer_params['email'] );
    
 		$customer    = gf_stripe()->create_customer( $customer_params, $feed, $entry, $form );
 		$customer_id = $customer->id;
